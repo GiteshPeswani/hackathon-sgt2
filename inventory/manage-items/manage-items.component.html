@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h2>Add New Item</h2>
+  <form (ngSubmit)="addItem()">
+    <input type="text" placeholder="Item Name" [(ngModel)]="newItem.name" name="name" required />
+    <input type="number" placeholder="Price" [(ngModel)]="newItem.price" name="price" required />
+    <input type="number" placeholder="Quantity" [(ngModel)]="newItem.quantity" name="quantity" required />
+
+    <!-- Category dropdown -->
+    <select [(ngModel)]="newItem.category" name="category" required>
+      <!-- Change this line: remove the 'selected' attribute -->
+      <option value="" disabled>Select Category</option>
+      <option value="Snacks">Snacks</option>
+      <option value="Beverages">Beverages</option>
+      <option value="Meals">Meals</option>
+    </select>
+
+    <button type="submit">Add Item</button>
+    <button type="button" (click)="dashboard_click()">View Inventory</button>
+  </form>
+</div>
